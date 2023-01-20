@@ -69,7 +69,7 @@ export default{
 }
 
 label {
-    width: 20%
+    width: 20%;
 }
 
 .btn{

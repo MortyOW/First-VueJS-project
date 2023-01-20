@@ -5,9 +5,9 @@
             <FormContact/>
         </div>
         <div class="useful-buttons">
-            <router-link to="/"><img src="../assets/icons8-iphone-14-pro-60.png" alt=""></router-link>
-            <router-link to="/contacts"><img src="../assets/icons8-contact-60.png" alt=""></router-link>
-            <router-link to="/journal"><img src="../assets/icons8-book-60.png" alt=""></router-link>
+            <router-link to="/"><i class="fa-solid fa-phone"></i></router-link>
+            <router-link to="/contacts"><i class="fa-solid fa-address-book"></i></router-link>
+            <router-link to="/journal"><i class="fa-solid fa-book"></i></router-link>
         </div>
     </section>
 </template>
@@ -31,6 +31,7 @@ export default{
     border: 20px solid black;
     border-radius: 30px;
     position: relative;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 }
 
 .useful-buttons{
@@ -44,7 +45,11 @@ export default{
     gap: 50px;
     height: 60px;
     padding-top: 5px;
-    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    background-color: white;
+}
+
+img{
+    color: white
 }
 
 .formform{
