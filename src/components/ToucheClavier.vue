@@ -24,4 +24,8 @@ export default{
     text-align: center;
 }
 
+.phonetile:hover{
+    background-color: green;
+}
+
 </style>

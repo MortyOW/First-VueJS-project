@@ -44,4 +44,8 @@ i{
   font-size: 24px;
   color: red;
 }
+
+i:hover{
+  color: blue;
+}
 </style>

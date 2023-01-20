@@ -1,4 +1,8 @@
 <template>
+    <div>
+        <audio ref="audioElement" src="path/to/your/audiofile.mp3"></audio>
+    <!-- Your number tile elements here -->
+    </div>
 <h1>Appelle tes copains !</h1>
 <section class="telephone">
     <div class="composition"> 
@@ -8,7 +12,7 @@
 </div>
 <div class="clavier-num">
     <span @click="compose(n-1)"  v-for="n in 10" :key="n" > <ToucheClavier :number="n-1"/> </span>  
-    <button @click="call"><img src="../assets/icons8-ringer-volume-50.png"></button>  
+    <button class="appel" @click="call"><img src="../assets/icons8-ringer-volume-50.png"></button>  
 </div>
 
 <div class="useful-buttons">
@@ -98,7 +102,9 @@ export default {
 }
 
 
-
+.appel:hover{
+    background-color: white;
+}
 
 .clavier-num{
     margin: auto;
