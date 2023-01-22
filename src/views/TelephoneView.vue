@@ -1,15 +1,50 @@
 <template>
-    <div>
-        <audio ref="audioElement" src="path/to/your/audiofile.mp3"></audio>
-    <!-- Your number tile elements here -->
-    </div>
 <h1>Appelle tes copains !</h1>
-<section class="telephone">
-    <div class="composition"> 
-    <span></span>
-{{ nuumber }}
-{{ linkedname }}
+<div>
+    <audio controls ref="audio" style="display: none;">
+        <source id="audioSource" src="../assets/audio/fart-02.mp3" type="audio/mp3">
+    </audio>
+
+    <audio controls ref="audio2" style="display: none;">
+        <source id="audioSource" src="../assets/audio/fart-03.mp3" type="audio/mp3">
+    </audio>
+
+    <audio controls ref="audio3" style="display: none;">
+        <source id="audioSource" src="../assets/audio/rototo.mp3" type="audio/mp3">
+    </audio>
+
+    <audio controls ref="audio4" style="display: none;">
+        <source id="audioSource" src="../assets/audio/scream.mp3" type="audio/mp3">
+    </audio>
+
+    <audio controls ref="audio5" style="display: none;">
+        <source id="audioSource" src="../assets/audio/sneaze.mp3" type="audio/mp3">
+    </audio>
+
+    <audio controls ref="audio6" style="display: none;">
+        <source id="audioSource" src="../assets/audio/laugh.mp3" type="audio/mp3">
+    </audio>
+
+    <audio controls ref="audio7" style="display: none;">
+        <source id="audioSource" src="../assets/audio/goat.mp3" type="audio/mp3">
+    </audio>
+
+    <audio controls ref="audio8" style="display: none;">
+        <source id="audioSource" src="../assets/audio/boum.mp3" type="audio/mp3">
+    </audio>
+
+    <audio controls ref="audio9" style="display: none;">
+        <source id="audioSource" src="../assets/audio/alarme.mp3" type="audio/mp3">
+    </audio>
+
 </div>
+<div class="composition"> 
+    <span>
+    {{ nuumber }}
+    {{ linkedname }}
+    </span>
+</div>
+<section class="telephone">
 <div class="clavier-num">
     <span @click="compose(n-1)"  v-for="n in 10" :key="n" > <ToucheClavier :number="n-1"/> </span>  
     <button class="appel" @click="call"><img src="../assets/icons8-ringer-volume-50.png"></button>  
@@ -38,6 +73,8 @@ export default {
     },
     methods: {
         compose(n){
+            this.playSound()
+            this.i++
             console.log(n)
             this.nuumber+=n
             if(this.$store.state.phonecontact.find(contact => this.nuumber == contact.number)){
@@ -66,12 +103,37 @@ export default {
                 alert("Bah dis-donc p'tit mâlin, on appelle pas un numéro vide pardis")
                 return
             }
+        },
+        playSound() {
+            console.log(this.i)
+            if(this.i == 1){
+                this.$refs.audio.play()
+            }else if(this.i == 2){
+                this.$refs.audio2.play()
+            }else if(this.i == 3){
+                this.$refs.audio3.play()
+            }else if(this.i == 4){
+                this.$refs.audio4.play()
+            }else if(this.i == 5){
+                this.$refs.audio5.play()
+            }else if(this.i == 6){
+                this.$refs.audio6.play()
+            }else if(this.i == 7){
+                this.$refs.audio7.play()
+            }else if(this.i == 8){
+                this.$refs.audio8.play()
+            }else if(this.i == 9){
+                this.$refs.audio9.play()
+            }else{
+                this.$refs.audio10.play()
+            }
         }
     },
     data(){
         return {
                 nuumber: "",
-                linkedname: ""
+                linkedname: "",
+                i: 1
             }
     }
 }
